@@ -1,0 +1,19 @@
+# deps
+node_modules/
+
+# local env
+*.local
+
+# aider
+.aider*
+
+# eslint cache
+.eslintcache
+
+# build output
+dist/
+
+# local dev scripts (not for open source)
+launch.bat
+CLAUDE.md
+claude-plugin/

@@ -1,0 +1,67 @@
+{
+  "name": "uniplug",
+  "version": "0.7.0",
+  "description": "Multi-provider AI API proxy. Supports GitHub Copilot, Kiro, DeepSeek, OpenAI, MiMo, Claude Direct and Ollama. Usable with Claude Code!",
+  "keywords": [
+    "proxy",
+    "github-copilot",
+    "kiro",
+    "deepseek",
+    "ollama",
+    "openai-compatible",
+    "anthropic-compatible"
+  ],
+  "homepage": "https://github.com/ryangui1983/uniplug",
+  "bugs": "https://github.com/ryangui1983/uniplug/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryangui1983/uniplug.git"
+  },
+  "author": "ryangui",
+  "type": "module",
+  "bin": {
+    "uniplug": "bin/uniplug.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "dev": "bun run --watch ./src/main.ts",
+    "lint": "eslint --cache",
+    "lint:all": "eslint --cache .",
+    "lint:fix": "eslint --fix ./src",
+    "prepare": "simple-git-hooks",
+    "start": "NODE_ENV=production bun run ./src/main.ts",
+    "typecheck": "tsc"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "bunx lint-staged"
+  },
+  "lint-staged": {
+    "*": "bun run lint --fix"
+  },
+  "dependencies": {
+    "consola": "^3.4.2",
+    "fetch-event-stream": "^0.1.5",
+    "gpt-tokenizer": "^3.0.1",
+    "hono": "^4.9.9",
+    "proxy-from-env": "^1.1.0",
+    "srvx": "^0.8.9",
+    "undici": "^7.19.1"
+  },
+  "devDependencies": {
+    "@echristian/eslint-config": "^0.0.54",
+    "@types/bun": "^1.2.23",
+    "@types/proxy-from-env": "^1.0.4",
+    "concurrently": "^9.2.1",
+    "eslint": "^9.37.0",
+    "knip": "^5.64.1",
+    "lint-staged": "^16.2.3",
+    "simple-git-hooks": "^2.13.1",
+    "tsdown": "^0.15.6",
+    "typescript": "^5.9.3"
+  }
+}
